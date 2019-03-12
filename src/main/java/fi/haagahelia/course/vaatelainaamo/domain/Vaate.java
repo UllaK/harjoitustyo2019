@@ -12,14 +12,16 @@ public class Vaate {
 	private long id;
 	
 	private String merkki, koko, kuvaus;
+	private int hinta;
 	
 	public Vaate() {}
 
-	public Vaate(String merkki, String koko, String kuvaus) {
+	public Vaate(String merkki, String koko, String kuvaus, int hinta) {
 		super();
 		this.merkki = merkki;
 		this.koko = koko;
 		this.kuvaus = kuvaus;
+		this.hinta = hinta;
 	}
 
 	public long getId() {
@@ -53,6 +55,16 @@ public class Vaate {
 	public void setKuvaus(String kuvaus) {
 		this.kuvaus = kuvaus;
 	}
+
+	public int getHinta() {
+		return hinta;
+	}
+
+	public void setHinta(int hinta) {
+		this.hinta = hinta;
+	}
+	
+	
 	
 	
 	
