@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <title>Vaatelainaamo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
+</head>
+<body>
+	<br>
+
+     <div class="col-md-3 col-md-offset-4">
+     	<h4>Kirjaudu vaatelainaamoon</h4>
+        <div class="alert alert-danger" th:if="${param.error}">
+            Väärä salasana tai käyttäjätunnut
+        </div>
+        <div class="alert alert-warning" th:if="${param.logout}">
+            Olet kirjautunut ulos
+        </div>  
+        <br>      
+<form th:action="@{/login}" method="post">
+	<div><label> Käyttäjätunnus: <input type="text" name="username" class="form-control"/> </label></div>
+    <div><label> Salasana: <input type="password" name="password" class="form-control"/> </label></div>
+    <br>
+    <div><input type="submit" value="Kirjaudu sisään" class="btn btn-primary"/></div>
+</form>
+
+</div>
+</body>
+</html>

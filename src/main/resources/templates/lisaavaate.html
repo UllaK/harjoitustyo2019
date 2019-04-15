@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5" >
+<head>
+    <title>Vaatelainaamo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
+</head>
+<body>
+	<h1>Lisää vaate</h1>
+	<div class="container">
+		<div class="col-md-4">
+		<form th:object="${vaate}" th:action="@{tallenna}" action="#" method="post">
+		  	<label for="merkki">Merkki</label>								
+			<input type="text" id="merkki" th:field="*{merkki}" class="form-control" />
+			<p th:if="${#fields.hasErrors('merkki')}" th:errors="*{merkki}">virhe</p>
+			<div style="clear: both; display: block; height: 10px;"></div>
+		  	<label for="koko">Koko</label>
+			<input type="text" id="koko" th:field="*{koko}" class="form-control"/>
+			<div style="clear: both; display: block; height: 10px;"></div>
+		  	<label for="email">Kuvaus vaatteesta</label>
+			<input type="text" th:field="*{kuvaus}" class="form-control" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+		  	<label for="hinta">Hinta/vrk</label>
+			<input type="text" id="hinta" th:field="*{hinta}" class="form-control" />
+			<div style="clear: both; display: block; height: 10px;"></div>			
+			<input type="submit" value="Tallenna" class="btn btn-sm btn-success"></input>
+		</form>
+		</div>
+	</div>
+</body>
+</html>
